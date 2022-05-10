@@ -185,6 +185,7 @@ a:hover, a:active {
 }
 .left .vid-container-circle{
     border: 4px solid #C0C0FF;
+    margin-right: 5%;
 }
 
 .video-circle {
@@ -305,6 +306,10 @@ a:hover, a:active {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    .left .vid-container-circle{
+        margin-left: 5%;
     }
 
     #firstproj .vid-container-circle {
