@@ -1,0 +1,326 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre, a, abbr, acronym, address, 
+big, cite, code, del, dfn, em, img, ins, kbd, 
+q, s, samp, small, strike, strong, sub, sup, 
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, 
+li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, 
+canvas, details, embed, figure, figcaption, footer, 
+header, hgroup, menu, nav, output, ruby, section, 
+summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    width: 100%;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1.6;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Global Attributes */
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #4A5D23;
+    font-family: 'Open Sans', Verdana, 'Trebuchet MS', sans-serif;
+    color: #F1E0E0;
+}
+
+a:link, a:visited {
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+/* Header - Grid to maintain responsive resizing*/
+/* Grid is initially in columns mode to comply with "design for mobile first" principle */
+/* Media Queries (at end) control desktop layout */
+.header {
+    display: grid;
+    float: left;
+    position: sticky;
+    top: 0%;
+    width: 100%;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto;
+    background-color: #804884;
+    color: #FFFFFF;
+    z-index: 2;
+}
+.header-item {
+    text-align: center;
+}
+.header a{
+    background-color: rgba(255,255, 255, 0);
+    padding: 1vh 1vw;
+    text-decoration: none;
+    transition: all 0.7s;
+} 
+.header a:hover, .header a:active {
+    background-color: rgba(255,200, 255, 0.4);
+}
+.header a.empty-link:hover {
+    background-color: rgba(255,255, 255, 0)
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-content: center;
+}
+.dropdown-item {
+    display: block;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    opacity: 0;
+    margin: 1vh;
+    padding: 1vh 2vw;
+    z-index: 2;
+    transition: all 0.7s;
+}
+/*Show the dropdown menu on hover
+  opacity instead of display for smooth transition
+*/
+.dropdown-item.visible{
+    opacity: 1;
+}
+/*Dropdown Links*/
+.dropdown-item a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-item a:hover {background-color: rgba(255,200, 255, 0.4);}
+
+/* Intro */
+#intro{
+    display: grid;
+    background-color: #E15155;
+    color: #E0F1E0;
+    padding: 0 0 2% 0;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+/* Project Containers */
+.project-container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    grid-template-areas: 
+        "vid vid vid"
+        "txt txt txt";
+}
+
+/* Alternately Color */
+.right{
+    background-color: #3B82ED;
+    color: #FFFFFF;
+}
+
+.left{
+    background-color: #FFCB10;
+    color: #003153;
+    width: 97.5vw;
+    padding-right: 1.5%;
+}
+
+/* Mask video in circle (will media query for smaller screens) (in opposition to "mobile first" principle but necessary in this case) */
+.vid-container-circle{
+    width: 20vw;
+    height: 20vw;
+    background-color: #000000;
+    border-radius: 100%;
+    -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+    -webkit-transform: rotate(0.000001deg); 
+    -webkit-border-radius: 100%; 
+    -moz-border-radius: 100%;
+}
+/* Borders for the video containers */
+.right .vid-container-circle{
+    margin-left: 5%;
+    border: 4px solid #FF9F55;
+}
+.left .vid-container-circle{
+    border: 4px solid #C0C0FF;
+}
+
+.video-circle {
+    position: relative;
+    top: 0%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Project Text Flair */
+.description {
+    display: grid;
+    margin-left: 10%;
+    max-width: 80%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    grid-area: 'txt';
+}
+.description h2{
+    font-style: italic;
+}
+
+
+/* Footer */
+.footer {
+    display: grid;
+    float: left;
+    bottom: 0%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    background-color: #804884;
+    color: #FFFFFF;
+    z-index: 2;
+    padding-bottom: 1%;
+}
+
+.footer-item {
+    text-align: center;
+    padding-top: 1vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.footer a{
+    background-color: rgba(255,255, 255, 0);
+    padding: 0 0 1vh 0;
+    text-decoration: none;
+    transition: all 0.7s;
+} 
+
+.footer a:hover, .footer a:active {
+    background-color: rgba(255,200, 255, 0.4);
+}
+
+.footer a.empty-link:hover {
+    background-color: rgba(255,255, 255, 0)
+}
+
+/*Media Queries for behavior on desktops*/
+@media only screen and (min-width: 780px) {
+
+    .header, .footer{
+        grid-template-rows: auto;
+        grid-template-columns: auto auto auto auto auto;
+    }
+
+    .dropdown{
+        display: block;
+        padding: 1vh 1vw;
+    }
+
+    .dropdown-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        width: 15.5vw;
+        opacity: 0;
+        margin: 1vh;
+        color: #000000;
+        background-color: #f1f1f1;
+        padding: 1vh 2vw;
+        box-shadow: 0px 1vh 2vw 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        transition: all 0.7s;
+    }
+
+    .dropdown-item a {
+        color: #000000;
+    }
+
+    /*Show the dropdown menu on hover
+      opacity instead of display for smooth transition
+    */
+    .dropdown:hover .dropdown-item {opacity: 1;}
+
+    .dropdown-item a:hover {background-color: #bbbbbb}
+}
+
+/* Media queries for video circles (media query fires on screens < 780 px, i.e. phones/tablets) */
+@media only screen and (max-width: 780px) {
+    .project-container{
+        grid-template-areas: 
+            "vid" 
+            "txt";
+        padding: 2% 0;
+    }
+    .video-circle{
+        display: none;
+    }
+
+    .vid-container-circle{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #firstproj .vid-container-circle {
+        background-image: url(assets/images/30mff.jpg);
+    }
+
+    #comicproj .vid-container-circle {
+        background-image: url(assets/images/comix.jpg);
+    }
+
+    #soundproj .vid-container-circle {
+        background-image: url(assets/images/soundproject.jpg);
+    }
+
+    #videoproj .vid-container-circle {
+        background-image: url(assets/images/freshmanexpress.jpg);
+    }
+}
