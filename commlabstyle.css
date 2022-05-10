@@ -164,7 +164,7 @@ a:hover, a:active {
 .left{
     background-color: #FFCB10;
     color: #003153;
-    width: 97.5vw;
+    width: 100vw;
     padding-right: 1.5%;
 }
 
@@ -309,18 +309,18 @@ a:hover, a:active {
     }
 
     #firstproj .vid-container-circle {
-        background-image: url(assets/images/30mff.jpg);
+        background-image: url(assets/images/30mff.JPG);
     }
 
     #comicproj .vid-container-circle {
-        background-image: url(assets/images/comix.jpg);
+        background-image: url(assets/images/comix.JPG);
     }
 
     #soundproj .vid-container-circle {
-        background-image: url(assets/images/soundproject.jpg);
+        background-image: url(assets/images/soundproject.JPG);
     }
 
     #videoproj .vid-container-circle {
-        background-image: url(assets/images/freshmanexpress.jpg);
+        background-image: url(assets/images/freshmanexpress.JPG);
     }
 }
