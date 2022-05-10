@@ -173,6 +173,7 @@ a:hover, a:active {
     height: 20vw;
     background-color: #000000;
     border-radius: 100%;
+    margin: 2% 0 2% 0;
     -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
     -webkit-transform: rotate(0.000001deg); 
     -webkit-border-radius: 100%; 
@@ -303,6 +304,8 @@ a:hover, a:active {
     }
 
     .vid-container-circle{
+        width: 40vw;
+        height: 40vw;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
